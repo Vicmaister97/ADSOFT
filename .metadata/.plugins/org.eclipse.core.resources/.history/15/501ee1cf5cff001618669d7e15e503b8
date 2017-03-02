@@ -4,30 +4,36 @@
 *
 */
 
-package eps.uam.ads.p2.autoescuela.Fecha;
-
 public class Fecha {
 
-	int private dia;
-	int private mes;
-	int private annio;
+	private int dia;
+	private int mes;
+	private int annio;
+	
+	public Fecha(int ndia, int nmes, int nannio){
+		dia = ndia;
+		mes = nmes;
+		annio = nannio;
+	}
 
 	public boolean isFechaValida(){
-		if (dia < 1 || dia > 31)	return FALSE;
-		if (mes < 1 || mes > 12)	return FALSE;
-		if (annio < 0)	return FALSE;
+		if (dia < 1 || dia > 31)	return false;
+		if (mes < 1 || mes > 12)	return false;
+		if (annio < 0)	return false;
 
-		return TRUE;
+		return true;
 	}
 
 	public String getFecha(){
-		String fecha = Integer.toString(dia) + Integer.toString(mes) + Integer.toString(annio);
+		/*String fecha = Integer.toString(dia) + Integer.toString(mes) + Integer.toString(annio);
 
-		return fecha;
+		return fecha;*/
+		
+		return dia + "/" + mes + "/" annio;
 	}
 
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 	if (args.length < 1) {
 	System.out.println("Se espera un numero como parametro."); return;
 	}
@@ -49,5 +55,5 @@ public class Fecha {
 		System.out.print("\n");
 		
 		}
-	}
+	}*/
 }

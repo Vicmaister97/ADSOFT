@@ -1,0 +1,40 @@
+/**
+* En este fichero se encuentra la implementacion de la clase Alumno empleada en el apartado 1 de la P2   *
+* @author Estudiante EPS alfonso.carvajal@estudiante.uam.es victor.garciacarrerea@estudiante.uam.es
+*
+*/ 
+public class Alumno {
+
+	int dni;
+	String nombre;
+	String private apellidos;
+	String private direccion;
+	int private telefono;
+	Fecha private fechaMatricula;
+	Fecha private fechaSupTeorico;
+	Fecha private fechaSupPractico;
+	
+	
+	
+	public Alumno(int ndni, String nomb, String apell, String dir, int telef, int ndia, int nmes, int nannio){
+		dni = ndni;
+		nombre = nomb;
+		apellidos = apell;
+		direccion = dir;
+		telefono = telef;
+		fechaMatricula = new Fecha(ndia, nmes, nannio);
+		
+		System.out.println("Nombre y apellidos: " + nomb + apell);
+		System.out.println("Dirección: " + dir);
+		System.out.println("Telefono: " + telef);
+		System.out.println("Fecha de matriculación: " + fechaMatricula.getFecha());
+	}
+	
+	
+	
+	public boolean isFechaValida(Fecha f){
+		return f.isFechaValida();
+		
+	}
+
+}
