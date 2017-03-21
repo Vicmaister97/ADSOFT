@@ -1,0 +1,14 @@
+practica3 adsof
+
+public static final Biblioteca Instance = new Biblioteca();
+
+private Biblioteca(){}; -->constructor vacio de manera que nadie mas puede instanciar otra Biblioteca
+
+public --> que toda clase pueda acceder a sus metodos
+static --> ??
+final --> nadie puede modificar esa instancia de Biblioteca
+
+
+FechaSimulada.getHoy().toEpochDay() --> long
+
+getHoy() --> devuelve un objeto de tipo hoy, pero hoy va cambiando segun el dia q preguntemos

@@ -1,0 +1,1 @@
+INDEX VERSION 1.129+/Users/fons/Mathematics/UAM/II/2o Cuatrimestre/adsof/practicas/ADSOFT/practica3/P3codigoParaMoodle/es/uam/eps/ads/.metadata/.plugins/org.eclipse.jdt.core

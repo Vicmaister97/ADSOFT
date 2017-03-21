@@ -1,0 +1,28 @@
+package es.uam.eps.ads.p3.biblioteca;
+
+public class Libro extends Obra{
+	private String editorial;
+	private long n_edicion;
+	
+	public Libro(String titulo, String autor, int anio, String editorial, long n_edicion) {
+		super(titulo, autor, anio);
+		this.editorial = editorial;
+		this.n_edicion = n_edicion;
+	}
+	public Libro(String titulo, String autor, int anio) {
+		super(titulo, autor, anio);
+	}
+	public String getEditorial() {
+		return editorial;
+	}
+	public void setEditorial(String editorial) {
+		this.editorial = editorial;
+	}
+	public long getN_edicion() {
+		return n_edicion;
+	}
+	public void setN_edicion(long n_edicion) {
+		this.n_edicion = n_edicion;
+	}
+	
+}
