@@ -1,20 +1,9 @@
 package es.uam.eps.ads.p3.biblioteca;
 
-public class Genero {
-	private String nombre;
+/**
+* En este fichero se encuentra la implementacion de la clase Genero
+* @author Estudiante EPS alfonso.carvajal@estudiante.uam.es victor.garciacarrerea@estudiante.uam.es
+*
+*/
 
-	public Genero(String nombre) {
-		super();
-		this.setNombre(nombre);
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-   public static Genero DRAMA = new Genero("Drama");
-}
+public enum Genero {DRAMA, COMEDIA, TERROR}

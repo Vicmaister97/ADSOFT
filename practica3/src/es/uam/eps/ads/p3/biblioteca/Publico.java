@@ -1,23 +1,78 @@
 package es.uam.eps.ads.p3.biblioteca;
 
+/**
+* En este fichero se encuentra la implementacion de la clase Publico
+* @author Estudiante EPS alfonso.carvajal@estudiante.uam.es victor.garciacarrerea@estudiante.uam.es
+*
+*/
+
 public class Publico extends Usuario{
+	private int ppb;
 	public Publico(String nombre) {
 		super(nombre);
-		this.lim_simultaneos = lim_simultaneos;
-		this.contador_prestados = contador_prestados;
+		this.setLimPrestados(2);
+		this.ppb = 0;
 	}
-	private int lim_simultaneos;
-	private int contador_prestados;
-	public int getLim_simultaneos() {
-		return lim_simultaneos;
+	
+	public void setLim(){
+			this.setLimPrestados(2);
 	}
-	public void setLim_simultaneos(int lim_simultaneos) {
-		this.lim_simultaneos = lim_simultaneos;
+	/**
+	* Actualiza los prestamos para bonificar
+	* Si sobrepasa el limite de prestamos simultaneos del usuario
+	* se incrementa este limite y  se inicializa
+	* el numero de prestamos para bonificar a 1
+	*
+	*/
+	public void actualizarPpb(){
+		this.ppb++;
+		if(this.ppb > this.getLimPrestados()){
+			this.setLimPrestados(this.getLimPrestados() + 1);
+			this.ppb = 1;
+		}
 	}
-	public int getContador_prestados() {
-		return contador_prestados;
+	/**
+	* Incrementa los el valor de ejemplares que posee el usuario
+	*
+	* @param p Prestamo que se quiere añadir
+	*
+	*/
+	public void anyadirPrestamo(Prestamo p){
+			super.addNumPrestados();
+			this.actualizarPpb();
+			p.cambiarStatus();
+			p.getEjemplar().getObra().actualizarContador();
 	}
-	public void setContador_prestados(int contador_prestados) {
-		this.contador_prestados = contador_prestados;
+	/**
+	* Reduce en n el numero de prestamos para bonificar y resetea
+	* el limite de prestamos simultaneos a 2
+	* si es menor que 0, se resetea este numero a 0
+	*
+	* @param n int, numero que se quiere reducir
+	*
+	*/
+	public void reduceLimPrestados(int n){	   
+		this.ppb -= n;
+		if(this.ppb < 0){
+			this.ppb = 0;
+		}
+		this.setLimPrestados(2);
 	}
+	/**
+	* Sanciona al usuario mediante la llamada al metodo reduceLimPrestados
+	* 
+	*
+	* @param dias, int numero de dias de retraso
+	*
+	*/
+	public void sancionarPorRetraso(int dias){
+		reduceLimPrestados(dias);
+	}
+	
+	public String toString() {
+		return "[P: " + super.getNombre() + ",ppb:" + this.ppb + ",ps:" + super.getLimPrestados()
+				+ "]";
+	}
+
+
 }

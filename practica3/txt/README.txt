@@ -1,0 +1,1 @@
+En este directorio se encuentran las imágenes de las salidas de los diversos testers empleados para comprobar el correcto funcionamiento de nuestras clases. Las salidas que se muestran provienen de la aplicación Eclipse, que fue el editor que utilizamos para realizar la práctica.
